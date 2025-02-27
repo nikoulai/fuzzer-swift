@@ -20,6 +20,7 @@ let package = Package(
     dependencies: [
 	// .package(url: "https://github.com/swift-server/swift-backtrace.git", .revision("4915cdd24e3300065cda228cb50d35ba00094aa3")),
     .package(url: "https://github.com/zecdev/zcash-swift-payment-uri.git", exact: "0.1.0-beta.10"),
+    .package(url: "https://github.com/mgriebling/UInt128.git", exact: Version(stringLiteral: "3.1.5")),
 
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
@@ -32,7 +33,7 @@ let package = Package(
             dependencies: [
                 .product(name: "ZcashPaymentURI", package: "zcash-swift-payment-uri")
             ],
-            exclude: ["Sources/main.swift"],
+            exclude: ["main.swift"],
              cSettings: [
         .unsafeFlags(["-fsanitize=fuzzer-no-link"]),
         ]
